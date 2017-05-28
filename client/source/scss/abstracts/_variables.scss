@@ -1,0 +1,35 @@
+// *****************************************************************************
+// Variables
+// *****************************************************************************
+
+$colors: (
+  'primaryText': #6b6c6d,
+  'primaryBackground': #eef2f6,
+  'boxBackground': #ffffff,
+
+  'hooprOrange': #d45d42,
+  'hooprBlue': #3488bb,
+  'hooprBrightOrange': #FFEBE6,
+
+  'scoreWin': #479047,
+  'scoreLose': #1c87bd,
+
+  'darkLink': #373C41
+);
+
+$leftBlockWidth: 280px;
+$rightBlockWidth: 530px;
+$marginRight: 125px;
+$stdRadius: 3px;
+
+// this is used by media query to set layout break point
+$maxRegDesktopBreakPoint: 1199px;
+$maxMobileBreakPoint: 767px;
+
+$version: "1.0";
+// $fontFamily: "Bio Sans";
+$fontFamily: 'Play';
+$linkColor: #1C87BD;
+$background-color: #EEF2F6;
+$b-radius: 2px;
+$wrap-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);

@@ -1,0 +1,64 @@
+.inventory-parent {
+    color: white;
+    overflow: hidden;
+    max-height: 800px;
+    .inventory {
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        height: 80%;
+        overflow: scroll;
+        .inventory-item {
+            width: 240px;
+            margin: 50px auto;
+        }
+        .inventory-shot {
+            background-color: #fff;
+            background-size: cover;
+            background-position-x: 0px;
+            background-position-y: 0px;
+            width: 130px;
+            height: 130px;
+            border: 4px solid #efac6e;
+            border-radius: 100%;
+            z-index: 100;
+            position: relative;
+            margin: 0 auto 10px auto;
+        }
+        .inventory-name {
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .inventory-class {
+            text-align: center;
+            letter-spacing: 2px;
+            span {
+                font-weight: 700;
+                letter-spacing: 1px;
+                font-size: 15px;
+            }
+        }
+        .shuttle {
+            color: #cccc78;
+        }
+        .fighter {
+            color: #962626;
+        }
+        .freighter {
+            color: #2e752e;
+        }
+    }
+}
+
+.showroom-parent {
+    color: white;
+    .showroom {
+        position: absolute;
+        top: 10px;
+        left: 30px;
+    }
+}
+
+.path-invisible {
+    visibility: hidden;
+}

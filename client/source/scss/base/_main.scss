@@ -1,0 +1,172 @@
+.h-box {
+	background-color: #656998;
+	border-radius: $b-radius;
+	box-shadow: $wrap-box-shadow;
+}
+
+.h-container {
+	@extend .container;
+	@extend .h-box;
+	padding: 15px 18px;
+}
+
+.row-shadow {
+	box-shadow: inset 0 9px 15px -15px rgba(100,100,100,1);
+}
+
+.brand-img {
+	margin-top: -20px;
+}
+
+
+.hoopr-logo-text {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.score {
+  color: map-get($colors, scoreLose);
+  font-weight: bold;
+
+  &.win {
+    color: map-get($colors, scoreWin);
+  }
+}
+
+.team-marker {
+	text-transform: uppercase;
+	font-size: .8em;
+	letter-spacing: -0.2px;
+}
+
+.status-public {
+	color: green;
+	font-size: .9rem;
+}
+.status-private {
+	color: yellow;
+	font-size: .9rem;
+}
+
+// page
+////
+.page-wide-content {
+	padding: 20px;
+}
+
+// container
+////
+.container {
+	width: 100%;
+	max-width: 1200px;
+}
+
+// input
+////
+.input-group-addon-sample-url {
+	font-size: .9rem;
+}
+
+.input-group {
+	margin-bottom: 10px;
+}
+
+// buttons
+////
+.btn.focus,
+.btn:focus {
+	box-shadow: none;
+}
+.btn-compact {
+	font-size: .8rem;
+}
+
+// form
+////
+
+form.form-hoopr {
+	// input wrapper
+	// this is the thicker text input field used mostly in auth pages
+	div.input-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 54px;
+		margin-top: 8px;
+		margin-bottom: 4px;
+		cursor: text;
+		padding: 0 16px;
+		background-color: #F8F8F8;
+		border-radius: $b-radius;
+
+		input {
+			border: 0;
+			background-color: #F8F8F8;
+			width: 100%;
+			height: 40px;
+			font-size: 1rem;
+			font-weight: bold;
+			letter-spacing: 1px;
+			//text-transform: uppercase;
+
+			&:focus {
+				outline:0;
+			}
+		}
+	}
+
+	// button wrapper
+	// this is the wrapper for button used mostly in auth pages
+	.button-wrapper {
+		margin: 5px 0;
+
+		button {
+			width: 100%;
+			text-transform: uppercase;
+			height: 54px;
+			cursor: pointer;
+		}
+	}
+
+	.select-wrapper {
+		margin: 5px 0;
+		text-align: center;
+
+		select {
+			display: inline-block;
+			padding-left: 18px;
+			width: 100%;
+			height: 54px;
+			background-color: #F8F8F8;
+			border: none;
+			color: #777;
+			font-size: .95rem;
+			font-weight: bold;
+			letter-spacing: 1px;
+			-webkit-appearance: none;
+	    -moz-appearance: none;
+	    appearance: none;
+		}
+	}
+}
+
+.footer {
+	width: 100%;
+	margin-top: 20px;
+	padding: 0;
+	font-size: .9rem;
+	text-align: center;
+	user-select: none;
+	cursor: default;
+
+	a,
+	a:hover,
+	a:focus {
+		color: map-get($colors, darkLink);
+	}
+
+	p {
+		display: inline-block;
+		padding: 0 10px;
+	}
+}

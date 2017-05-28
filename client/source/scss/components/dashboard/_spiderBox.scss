@@ -1,0 +1,91 @@
+.spider-box-parent {
+    width: $rightBlockWidth;
+    margin: -15px auto 0 auto;
+    float: left;
+    .spider-box {
+        width: $rightBlockWidth;
+        height: 280px;
+        margin: 0 auto;
+        border-radius: $stdRadius;
+        .spider-box-inner-wrapper {
+            height: 337px;
+            .nav-item {
+                background-color: map-get($colors, primaryBackground);
+            }
+            .nav-tabs .nav-link {
+                border: 1px solid #dbe3ff;
+                color: #879ea9;
+                text-align: center;
+                &:hover {
+                    border: 1px solid map-get($colors, hooprBlue);
+                    color: map-get($colors, hooprBlue);
+                }
+            }
+            .nav-link.active {
+                color: #879ea9;
+                &:hover {
+                    border-color: #dbe3ff;
+                    color: #879ea9;
+                }
+            }
+        }
+        ul li {
+            min-width: 98px;
+        }
+        ul li:nth-child(5) {
+            width: 123px;
+        }
+        .legend {
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            fill: #3488bb;
+        }
+        .tooltip {
+            fill: #333333;
+        }
+        #tab-graph {
+            svg {
+                width: $rightBlockWidth;
+                height: 300px;
+                padding-left: 154px;
+                padding-top: 37px;
+                background-color: #fff;
+                .axis .line {
+                    stroke: #dbdbdb;
+                    stroke-width: 1px;
+                }
+            }
+            rect {
+                fill: #f3f3f3;
+                stroke: none;
+            }
+        }
+        .flip-dashboard-button {
+            position: relative;
+            width: 93px;
+            top: -190px;
+            left: 430px;
+            border: 1px solid map-get($colors, hooprBlue);
+            border-radius: 5px;
+            padding: 5px 5px 5px 7px;
+            color: map-get($colors, hooprBlue);
+            font-weight: bold;
+            i {
+                padding-left: 5px;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: map-get($colors, hooprBlue);
+                color: #fff;
+                border: 1px solid #fff;
+            }
+        }
+    }
+}
+
+@include dashboard-tablet {
+    .spider-box-parent {
+        margin: -15px auto 0 auto;
+    }
+}

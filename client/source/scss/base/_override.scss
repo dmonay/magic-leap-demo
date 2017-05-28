@@ -1,0 +1,18 @@
+// bootstrap
+////
+
+.page-item {
+
+  .page-link {
+    color: #555;
+  }
+
+  &.active .page-link {
+    z-index: 2;
+    color: #fff;
+    background-color: map-get($colors, hooprBlue);
+    border-color: map-get($colors, hooprBlue);
+  }
+
+
+}
