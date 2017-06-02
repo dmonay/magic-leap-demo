@@ -13,7 +13,7 @@ const animateElement = path => {
   // Trigger a layout so styles are calculated & the browser
   // picks up the starting position before animating
   path.getBoundingClientRect();
-  // Define our transition
+  // Define transition
   path.style.transition = path.style.WebkitTransition = 'stroke-dashoffset 2s ease-in-out';
   path.style.strokeDashoffset = '0';
 };
@@ -24,14 +24,29 @@ const animatePath = uniqueClass => {
   animateElement(elems[2]);
 };
 
+const adjustHeight = () => {
+  let invParent = document.getElementsByClassName('inventory-parent');
+  if (invParent.length > 0) {
+    invParent = invParent[0];
+    invParent.style.maxHeight = window.innerHeight + 'px';
+  }
+  let inventory = document.getElementsByClassName('inventory');
+  if (inventory.length > 0) {
+    inventory = inventory[0];
+    inventory.style.height = window.innerHeight - 150 + 'px';
+  }
+};
+
 export default class LineChart extends React.Component {
   constructor() {
     super();
   }
 
-  componentDidUpdate() {
-    animatePath(this.props.data);
+  shouldComponentUpdate(nextProps, nextState) {
+    // avoid redrawing the line on state change
+    return false;
   }
+
   componentWillUpdate() {
     // each update flush the nodes of the chart
     while (this.rootNode.firstChild) {
@@ -40,21 +55,22 @@ export default class LineChart extends React.Component {
   }
 
   drawLineChart() {
+    if (!this.rootNode) {
+      return;
+    }
     const parent = this.rootNode.parentElement;
     const pInfo = parent.getBoundingClientRect();
     const width = pInfo.right - pInfo.left - 30;
     const height = window.innerHeight - 100;
 
-    // console.log('positionInfo is', pInfo);
-    // console.log('width is', width);
-    // console.log('height is', height);
+    adjustHeight();
 
     // Create the container
     const svgContainer = d3
       .select(this.rootNode)
       .append('svg')
-      .attr('width', 1200)
-      .attr('height', 800);
+      .attr('width', window.innerWidth)
+      .attr('height', height);
 
     const lineFunction = d3.svg
       .line()
@@ -67,7 +83,7 @@ export default class LineChart extends React.Component {
       .interpolate('linear');
 
     const offset = 10;
-    //The data for our line
+
     const topLineData = [
       { x: width, y: height / 2 - offset },
       { x: width, y: 0 },

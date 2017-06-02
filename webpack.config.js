@@ -44,7 +44,7 @@ const rules = [
   {
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
-    use: ['babel-loader']
+    use: ['babel-loader?compact=false']
   },
   {
     test: /\.(jpg|ico|otf|eot|woff|woff2|ttf)$/,
@@ -54,7 +54,7 @@ const rules = [
     use: 'url-loader?limit=20480&name=assets/[name].[ext]'
   },
   {
-    test: /\.(svg|gif|png)$/,
+    test: /\.(svg|gif|png|obj|mtl)$/,
     include: imgPath,
     use: 'file-loader?name=assets/[name].[ext]'
   }
@@ -119,7 +119,7 @@ module.exports = {
   context: jsSourcePath,
   entry: {
     js: jsEntry,
-    vendor: ['bootstrap', 'd3', 'jquery', 'moment', 'react-dom', 'react']
+    vendor: ['bootstrap', 'd3', 'jquery', 'react-dom', 'react']
   },
   output: {
     path: buildPath,

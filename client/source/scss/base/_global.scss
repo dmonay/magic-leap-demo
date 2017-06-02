@@ -1,135 +1,50 @@
-/* CSS for version #{$version}. */
-
 // *****************************************************************************
 // Global
 // *****************************************************************************
-
 html {
-	height: 100%;
-	font-size: 14px;
+    height: 100%;
+    font-size: 14px;
 }
+
 body {
-	max-height: 100%;
-	height: 100%;
-	font-size: 14px;
+    max-height: 100%;
+    height: 100%;
+    font-size: 14px;
+    overflow-y: scroll;
+    background-color: map-get($colors, primaryDark);
 }
 
 body,
 input {
-	font-family: $fontFamily;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    font-family: $fontFamilyTech;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-	overflow-y: scroll;
-	background-color: #1b2025;
-}
-
-h1, h2, h3, h4 {
-	margin-bottom: 10px;
-	cursor: default;
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: 10px;
+    cursor: default;
 }
 
 h1 {
-	font-size: 2.5rem;
+    font-size: 2.5rem;
 }
 
 h2 {
-	font-size: 2rem;
+    font-size: 2rem;
 }
 
 h3 {
-	font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 h4 {
-	font-size: 1rem;
+    font-size: 1rem;
 }
 
 button {
-	cursor: pointer;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-	font-size: 14px;
-}
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus {
-	border-color: map-get($colors, hooprBlue);;
-}
-input[type="text"]::-webkit-input-placeholder,
-input[type="password"]::-webkit-input-placeholder,
-input[type="email"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #8a8a8a;
-	opacity: 1;
-}
-input[type="text"]::-moz-placeholder,
-input[type="password"]::-moz-placeholder,
-input[type="email"]::-moz-placeholder { /* Firefox 19+ */
-  color: #8a8a8a;
-	opacity: 1;
-}
-input[type="text"]:-ms-input-placeholder,
-input[type="password"]:-ms-input-placeholder,
-input[type="email"]:-ms-input-placeholder { /* IE 10+ */
-  color: #8a8a8a;
-	opacity: 1;
-}
-input[type="text"]:-moz-placeholder,
-input[type="password"]:-moz-placeholder,
-input[type="email"]:-moz-placeholder { /* Firefox 18- */
-  color: #8a8a8a;
-	opacity: 1;
-}
-
-// *****************************************************************************
-// Flash Message
-// *****************************************************************************
-
-#flash-container {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	z-index: 100;
-	margin: 0;
-}
-
-#h-flash-container {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	z-index: 100;
-	margin: 0;
-
-	.alert-box-fixed {
-		margin: 0 15px 15px 0;
-		border-radius: $b-radius;
-	}
-}
-
-.alert-box-fixed {
-	margin: 0 15px 15px 0;
-}
-
-// *****************************************************************************
-// Flicker on Load Fix for Glyphicons
-// *****************************************************************************
-
-a,
-a:hover,
-.btn-link,
-.btn-link:hover {
-	color: $linkColor;
-}
-
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:focus {
-	border: 0;
-	background-color: #1C87BD;
-	font-weight: bold;
+    cursor: pointer;
 }

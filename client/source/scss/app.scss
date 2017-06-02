@@ -1,20 +1,9 @@
 // Plugins
 @import "../../../node_modules/bootstrap/scss/bootstrap";
-@import "../../../node_modules/bourbon/app/assets/stylesheets/bourbon";
-
 // Abstracts
-@import 'abstracts/mixins';
 @import 'abstracts/variables';
-@import 'abstracts/font';
-
 // Base
 @import 'base/normalize';
-@import 'base/main';
 @import "base/global";
-// @import "base/override";
-
 // Components
 @import 'components/all';
-
-// // Templates
-@import "templates/leagueLayout";

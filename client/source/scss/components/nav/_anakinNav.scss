@@ -1,0 +1,15 @@
+#anakin-nav {
+    padding: 0;
+    font-size: 1.2rem;
+    background-color: map-get($colors, primaryLavender);
+    margin: 0 auto 10px;
+    height: 80px;
+    color: map-get($colors, primaryLight);
+    .anakin-title {
+        font-family: $fontFamilyRetro;
+        font-size: 47px;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 2px;
+    }
+}

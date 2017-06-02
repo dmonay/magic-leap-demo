@@ -1,0 +1,17 @@
+.showroom-parent {
+    color: #fff;
+    .hint {
+        text-align: center;
+        margin-top: 10px;
+        span {
+            font-weight: 700;
+            font-size: 15px;
+        }
+    }
+    .showroom-msg {
+        text-align: center;
+        margin: -39% auto;
+        font-size: 25px;
+        font-family: $fontFamilyRetro;
+    }
+}

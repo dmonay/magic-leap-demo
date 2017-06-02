@@ -1,13 +1,60 @@
 .inventory-parent {
-    color: white;
+    color: #fff;
     overflow: hidden;
-    max-height: 800px;
     .inventory {
         position: absolute;
         top: 10px;
         width: 100%;
-        height: 80%;
         overflow: scroll;
+        .ship-details {
+            text-align: center;
+            margin: 100px auto;
+            font-size: 20px;
+            .spec-title {
+                text-transform: uppercase;
+                text-align: left;
+                padding-left: 30px;
+                font-size: 25px;
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
+            .tech-specs {
+                margin-top: 50px;
+                .spec-name {
+                    display: inline-block;
+                    text-align: left;
+                    width: 13vw;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                }
+                .spec-content {
+                    display: inline-block;
+                    text-align: left;
+                    width: 12vw;
+                    font-size: 1.3rem;
+                    vertical-align: top;
+                }
+            }
+        }
+        .back-btn {
+            border: 1px solid #fff;
+            border-radius: 5px;
+            width: 170px;
+            text-align: center;
+            font-family: $fontFamilyRetro;
+            font-size: 20px;
+            margin-left: 10px;
+            position: absolute;
+            top: 10px;
+            height: 40px;
+            padding-top: 4px;
+            &:hover {
+                cursor: pointer;
+            }
+            i {
+                font-size: 15px;
+            }
+        }
         .inventory-item {
             width: 240px;
             margin: 50px auto;
@@ -24,10 +71,17 @@
             z-index: 100;
             position: relative;
             margin: 0 auto 10px auto;
+            &:hover {
+                border: 4px solid map-get($colors, primaryLavender);
+                cursor: pointer;
+            }
         }
         .inventory-name {
             text-align: center;
             letter-spacing: 2px;
+            &:hover {
+                cursor: pointer;
+            }
         }
         .inventory-class {
             text-align: center;
@@ -36,6 +90,9 @@
                 font-weight: 700;
                 letter-spacing: 1px;
                 font-size: 15px;
+            }
+            &:hover {
+                cursor: pointer;
             }
         }
         .shuttle {
@@ -48,17 +105,4 @@
             color: #2e752e;
         }
     }
-}
-
-.showroom-parent {
-    color: white;
-    .showroom {
-        position: absolute;
-        top: 10px;
-        left: 30px;
-    }
-}
-
-.path-invisible {
-    visibility: hidden;
 }

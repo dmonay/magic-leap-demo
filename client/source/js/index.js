@@ -9,6 +9,8 @@ import { initializeState } from 'lib/state/state.js';
 // load vendor SCSS and static assets
 import 'bootstrap/dist/css/bootstrap.min.css';
 window.$ = window.jQuery = JQuery;
+require('../assets/3d/pod_racer.mtl');
+require('../assets/3d/pod_racer.obj');
 
 // Load app SCSS
 import '../scss/app.scss';

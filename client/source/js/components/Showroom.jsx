@@ -2,13 +2,51 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Line from './Line';
+import Arrow from './Arrow';
+import ModelRenderer from './ModelRenderer';
 
-export default class PlayerBox extends React.Component {
+const SelectedShip = data => {
+  const store = data.data.store;
+
+  if (store.active.selected !== null) {
+    return (
+      <div>
+        <ModelRenderer />
+        <div className="hint">
+          <span>Hint</span>: explore your ship by dragging it around. You can zoom!
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className="showroom-msg">
+      Select a ship from the inventory <Arrow />
+    </div>
+  );
+};
+
+const animateArrow = () => {
+  const svg = document.getElementById('animated-arrow');
+  const arrow = document.querySelector('.arrow');
+  const arrowFixed = document.querySelector('.arrow-fixed');
+
+  if (svg && arrow && arrowFixed) {
+    svg.setAttribute('class', 'polygonPathHover');
+    arrow.setAttribute('class', 'arrowHover');
+    arrowFixed.setAttribute('class', 'arrowFixedHover');
+  }
+};
+
+export default class Showroom extends React.Component {
   constructor(props) {
     super(props);
   }
+
   componentDidMount() {
     this.unsubscribe = this.context.store.subscribe(() => this.forceUpdate());
+  }
+  componentDidUpdate() {
+    animateArrow();
   }
   componentWillUnmount() {
     this.unsubscribe();
@@ -19,13 +57,11 @@ export default class PlayerBox extends React.Component {
     return (
       <div className="showroom-parent col-8">
         <Line data="showroomPath" />
-        <div className="showroom">
-          I am Showroom!
-        </div>
+        <SelectedShip data={{ store }} />
       </div>
     );
   }
 }
-PlayerBox.contextTypes = {
+Showroom.contextTypes = {
   store: PropTypes.object
 };
